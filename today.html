@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <title>Task</title>
+    </head>
+    <body>
+        <section class="mainsection"><!--  main section -->
+            <div class="progressform"><!-- usmain div to align the form in middle-->
+                <div class="timlineform"><!-- main div for form-->
+                    <div class="timeline"> <!-- div for timel -->
+                        <ul>
+                            <div class="ulinner">
+                                <li><button id="one">1</button></li>
+
+                                <li><button id="two">2</button></li>           <!-- four buttons for 4 steps count -->
+
+                                <li><button id="three">3</button></li>
+
+                                <li><button id="four">4</button></li>
+                                <div class="progress real-progress-bar">  <!-- progres bar  -->
+                                    <div class="progress-bar progress-bar1" role="progressbar" aria-label="Default striped example" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <!-- form for persional information -->
+
+                    <form>
+
+
+                        <!-- first part -->
+
+
+                        <div class="firstform">
+                            <div class="firstname">
+                                <label>First name</label>
+                                <input type="text" name="" placeholder="First name" />
+                            </div>
+                            <div class="lastname">
+                                <label>Last name</label>
+                                <input type="text" name="" placeholder="Last name" />
+                            </div>
+                            <button id="next">Next</button>
+                        </div>
+
+
+                        <!-- second part -->
+
+                        <div class="secondform">
+                            <div class="firstname">
+                                <label>Create password</label>
+                                <input type="text" name="" placeholder="New password" />
+                            </div>
+                            <div class="lastname">
+                                <label>Confirm password</label>
+                                <input type="text" name="" placeholder="Confirm password" />
+                            </div>
+                            <button id="back1">back</button>
+                            <button id="next1">Next</button>
+                        </div>
+
+                        <!-- third part -->
+
+
+                        <div class="thirdform">
+                            <div class="firstname">
+                                <label>Any traning</label>
+                                <input type="text" name="" placeholder="text...." />
+                            </div>
+                            <div class="lastname">
+                                <label>Any expirence</label>
+                                <input type="text" name="" placeholder="text...." />
+                            </div>
+                            <button id="back2">back</button>
+                            <button id="next2">Next</button>
+                        </div>
+
+                        <!-- forth part -->
+
+
+                        <div class="forthform">
+                            <div class="firstname">
+                                <label>Current address</label>
+                                <input type="text" name="" placeholder="Current address" />
+                            </div>
+                            <div class="lastname">
+                                <label>Permanent address</label>
+                                <input type="text" name="" placeholder="Permanent address" />
+                            </div>
+                            <button id="back3">back</button>
+                            <button id="next3">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- jquery and javascript -->
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                
+                // eventlistner for stop page reload on click
+
+                $("button").click(function (event) {
+                    event.preventDefault();
+                });
+
+                // for first click
+                $("#next").click(function () {
+                    $(".secondform").css("display", "block");
+                    $(".firstform").hide();
+                    $(".thirdform").hide();
+                    $(".forthform").hide();
+
+                    // to slow down the active class effect
+
+
+                    $("#two")
+                        .delay("slow")
+                        .queue(function (next) {
+                            $(this).addClass("active");
+                            next();
+                        });
+                    $(".progress-bar1").animate({ width: "35%" }, "fast");
+                });
+
+                // second click
+
+                $("#next1").click(function () {
+                    $(".thirdform").css("display", "block");
+                    $(".firstform").hide();
+                    $(".secondform").hide();
+                    $(".forthform").hide();
+                    $("#three")
+                        .delay("slow")
+                        .queue(function (next) {
+                            $(this).addClass("active");
+                            next();
+                        });
+                    $(".progress-bar1").animate({ width: "68%" }, "fast");
+                });
+
+                // third click
+
+                $("#next2").click(function () {
+                    $(".forthform").css("display", "block");
+                    $(".firstform").hide();
+                    $(".thirdform").hide();
+                    $(".secondform").hide();
+                    $("#four")
+                        .delay("slow")
+                        .queue(function (next) {
+                            $(this).addClass("active");
+                            next();
+                        });
+                    $(".progress-bar1").animate({ width: "100%" }, "fast");
+                });
+
+                // previous buttons
+
+                $("#back1").click(function () {
+                    $(".firstform").css("display", "block");
+                    $(".forthform").hide();
+                    $(".thirdform").hide();
+                    $(".secondform").hide();
+                    $("#two").removeClass("active");
+                    $(".progress-bar1").animate({ width: "0" });
+                });
+
+
+                $("#back2").click(function () {
+                    $(".secondform").css("display", "block");
+                    $(".forthform").hide();
+                    $(".thirdform").hide();
+                    $(".firstform").hide();
+                    $("#three").removeClass("active");
+                    $(".progress-bar1").css("width", "35%");
+                });
+
+                
+                $("#back3").click(function () {
+                    $(".thirdform").css("display", "block");
+                    $(".forthform").hide();
+                    $(".firstform").hide();
+                    $(".secondform").hide();
+                    $("#four").removeClass("active");
+                    $(".progress-bar1").css("width", "68%");
+                });
+            });
+        </script>
+    </body>
+</html>

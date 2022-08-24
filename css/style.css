@@ -1,0 +1,59 @@
+/*main section css*/
+
+.mainsection{float: left; width: 100%;}
+.timeline{float: left; width: 100%; position: relative; z-index: 10;}
+
+/*time line css*/
+
+.timeline ul{float: left; width: 100%; padding: unset;}
+.timeline ul .ulinner{margin: auto;width: 50%;position: relative;}
+.timeline ul li{float: left; list-style: none;width: 5%; margin:0 10%;} 
+.timeline ul li button{border: 1px solid #8A8AFF; border-radius: 100%; padding:5px 12px; background: #fff; color: #8A8AFF;}
+
+/*progress bar css*/
+
+.real-progress-bar{position: absolute; width: 80%;margin:4% 10%; z-index: -1; height: 4px;}
+.progress-bar{background-color: #8A8AFF;}
+#one{background-color: #8A8AFF !important; color: #fff;}
+
+/*to align the form in middle*/
+.progressform{margin:30px auto; width: 50%;}
+
+/*form css*/
+
+.timlineform{float: left; width: 100%; border: 1px solid blue; border-radius: 30px; padding: 30px;background: linear-gradient(to right top, #3eb7ba, #61c6c7, #7ed4d5, #98e3e3, #b2f2f1);z-index: -4;}
+.timlineform form{float: left; width: 100%; padding: 20px;}
+.firstform{float: left; width: 100%;}
+.firstname{float: left; width: 100%;}
+.lastname{float: left; width: 100%;}
+.secondform{float: left; width: 100%; display: none;}
+.thirdform{float: left; width: 100%; display: none;}
+.forthform{float: left; width: 100%; display: none;}
+.active{background-color: #8A8AFF !important; color: #fff !important;}
+label{float: left; width: 100%; padding: 10px 0; color: #003B73;}
+input{float: left; width: 50%;padding: 4px;border: 1px solid #BFD7ED; border-radius: 6px;}
+.timlineform form button{ float: left; padding: 6px 30px; margin: 10px 10px 0 0; border: 1px solid #BFD7ED; border-radius: 10px; background-color: #60A3D9; color: #fff;}
+
+/*media query for mobile*/
+
+
+@media only screen and (max-width: 767px){
+.timeline ul .ulinner{width: 100%;}	
+.progressform{width: 100%;}
+input{width: 100%;}
+}
+
+/*media query for tabs*/
+
+@media only screen and (min-width: 767px) and (max-width: 1023px){
+	.real-progress-bar{margin: 2% 10%;}
+.timeline ul .ulinner{width: 100%;}	
+.progressform{width: 100%;}
+
+}
+
+/*media query for big screens*/
+
+@media only screen and (min-width: 1023px) and (max-width: 1260px){
+	.real-progress-bar{margin: 7% 10%;}
+}
