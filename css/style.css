@@ -31,8 +31,9 @@
 .forthform{float: left; width: 100%; display: none;}
 .active{background-color: #8A8AFF !important; color: #fff !important;}
 label{float: left; width: 100%; padding: 10px 0; color: #003B73;}
-input{float: left; width: 50%;padding: 4px;border: 1px solid #BFD7ED; border-radius: 6px;}
-.timlineform form button{ float: left; padding: 6px 30px; margin: 10px 10px 0 0; border: 1px solid #BFD7ED; border-radius: 10px; background-color: #60A3D9; color: #fff;}
+input{float: left; width: 100%;padding: 4px;border: 1px solid #BFD7ED; border-radius: 6px;}
+.buttons{float: left; width: 100%;}
+.buttons button{ float: right; padding: 6px 30px; margin: 10px 10px 0 0; border: 1px solid #BFD7ED; border-radius: 10px; background-color: #60A3D9; color: #fff;}
 
 /*media query for mobile*/
 
@@ -40,7 +41,6 @@ input{float: left; width: 50%;padding: 4px;border: 1px solid #BFD7ED; border-rad
 @media only screen and (max-width: 767px){
 .timeline ul .ulinner{width: 100%;}	
 .progressform{width: 100%;}
-input{width: 100%;}
 }
 
 /*media query for tabs*/
@@ -53,7 +53,9 @@ input{width: 100%;}
 }
 
 /*media query for big screens*/
-
-@media only screen and (min-width: 1023px) and (max-width: 1260px){
+@media only screen and (min-width: 1023px) and (max-width: 1200px){
 	.real-progress-bar{margin: 7% 10%;}
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+	.real-progress-bar{margin: 5% 10%;}
 }
